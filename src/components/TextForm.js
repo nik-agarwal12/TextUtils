@@ -121,9 +121,8 @@ export default function TextForm(props) {
       >
         <h2>Your Text Summary</h2>
         <p>
-          {/* {text[text.length-1]===' ' || text===""? text.split(" ").length-1 : text.split(" ").length} Words and {text.length} Characters */}
           {
-            text.split(" ").filter((element) => {
+            text.split(/\s+/).filter((element) => {
               return element.length !== 0;
             }).length
           }{" "}
@@ -131,7 +130,7 @@ export default function TextForm(props) {
         </p>
         <p>
           {0.008 *
-            text.split(" ").filter((element) => {
+            text.split(/\s+/).filter((element) => {
               return element.length !== 0;
             }).length}{" "}
           minutes to read (approx)
